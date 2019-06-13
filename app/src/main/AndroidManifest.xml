@@ -9,7 +9,12 @@
         android:roundIcon="@drawable/sikika_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:theme="@style/customFs" android:configChanges="orientation|screenSize">
+        <activity android:name=".HomePage"></activity>
+        <activity android:name=".Walkthrough" android:theme="@style/customFs"/>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/customFs">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
