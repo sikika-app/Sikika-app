@@ -1,5 +1,6 @@
 package com.jr.sikika;
 
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import butterknife.ButterKnife;
 public class Walkthrough extends AppCompatActivity {
     @BindView(R.id.screenPager)
     ViewPager screenpager;
+    @BindView(R.id.tabLayout)
+    TabLayout indicator;
     WTAdapter adapter;
 
     @Override
@@ -31,5 +34,7 @@ public class Walkthrough extends AppCompatActivity {
         adapter = new WTAdapter(this, slist);
 
         screenpager.setAdapter(adapter);
+
+        indicator.setupWithViewPager(screenpager);
     }
 }
