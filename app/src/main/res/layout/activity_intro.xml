@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#1DECE8E8"
+    android:backgroundTintMode="multiply"
+    android:id="@+id/introRlayout"
+    tools:context=".Intro">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/introViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnGetStarted">
+
+    </android.support.v4.view.ViewPager>
+
+    <Button
+        android:text="get started"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/btn_getstarted"
+        android:layout_above="@id/base"
+        android:id="@+id/btnGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:id="@+id/base"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="back"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnBack"
+                android:layout_alignParentStart="true"
+                android:drawableLeft="@drawable/ic_arrow_back"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/smooth_corners"
+                android:textSize="15sp"/>
+
+            <android.support.design.widget.TabLayout
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="20dp"
+                android:layout_centerHorizontal="true"
+                app:tabPadding="5dp"
+                android:id="@+id/introTabLayout"
+                android:layout_width="wrap_content"
+                app:tabBackground="@drawable/indicator_selector"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp">
+            </android.support.design.widget.TabLayout>
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/smooth_corners"
+                android:text="next"
+                android:paddingRight="5dp"
+                android:layout_marginRight="5dp"
+                android:elevation="5dp"
+                android:textSize="15sp"
+                android:drawableRight="@drawable/ic_arrow_forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

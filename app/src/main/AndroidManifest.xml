@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HomePage"></activity>
-        <activity android:name=".Walkthrough" android:theme="@style/customFs"/>
+        <activity android:name=".Intro" android:theme="@style/customFullScreen"/>
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/customFs">
+            android:theme="@style/customFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
