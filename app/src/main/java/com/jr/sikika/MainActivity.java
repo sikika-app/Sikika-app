@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(ft){
-                    startActivity(new Intent(MainActivity.this, Walkthrough.class));
+                    startActivity(new Intent(MainActivity.this, Intro.class));
                     finish();
                 }else{
-                    startActivity(new Intent(MainActivity.this, Walkthrough.class));
+                    startActivity(new Intent(MainActivity.this, Intro.class));
                     finish();
                 }
             }
