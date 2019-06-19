@@ -1,4 +1,4 @@
-package com.jr.sikika;
+package com.jr.sikika.classes;
 
 public class ViewPageItem {
     String title, description;

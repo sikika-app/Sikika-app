@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.jr.sikika.adapters.ViewPageAdapter;
+import com.jr.sikika.classes.ViewPageItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +26,7 @@ public class Intro extends AppCompatActivity {
     Button btnnext;
     Button btngetstarted;
     Button btnback;
+    Button btnskip;
     int position;
 
     @Override
@@ -37,6 +41,7 @@ public class Intro extends AppCompatActivity {
         btnnext = findViewById(R.id.btnNext);
         btngetstarted = findViewById(R.id.btnGetStarted);
         btnback = findViewById(R.id.btnBack);
+        btnskip = findViewById(R.id.btnSkip);
 
 
         pageItems = new ArrayList<>();
@@ -117,23 +122,35 @@ public class Intro extends AppCompatActivity {
                 finish();
             }
         });
+
+        btnskip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //got to start activity
+                startActivity(new Intent(Intro.this, HomePage.class));
+                finish();
+            }
+        });
     }
 
     private void visibilityDeterminer(int position) {
         if(position == pageItems.size()-1){
             btngetstarted.setVisibility(View.VISIBLE);
             btnnext.setVisibility(View.GONE);
+            btnskip.setVisibility(View.GONE);
         }
 
         if(position == 0){
             btnback.setVisibility(View.GONE);
             btngetstarted.setVisibility(View.GONE);
             btnnext.setVisibility(View.VISIBLE);
+            btnskip.setVisibility(View.VISIBLE);
         }
         if(position !=pageItems.size()-1 && position !=0){
             btnback.setVisibility(View.VISIBLE);
             btngetstarted.setVisibility(View.GONE);
             btnnext.setVisibility(View.VISIBLE);
+            btnskip.setVisibility(View.VISIBLE);
         }
     }
 
