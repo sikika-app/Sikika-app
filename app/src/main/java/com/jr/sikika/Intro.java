@@ -10,6 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.jr.sikika.adapters.ViewPageAdapter;
+import com.jr.sikika.classes.ViewPageItem;
+import com.jr.sikika.database.DatabaseAccess;
+import com.jr.sikika.database.FirstRun;
+import com.jr.sikika.database.FirstRunInterface;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +29,16 @@ public class Intro extends AppCompatActivity {
     Button btnnext;
     Button btngetstarted;
     Button btnback;
+    Button btnskip;
     int position;
+
+    FirstRunInterface firstRunInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        firstRunInterface = DatabaseAccess.getInstance(this).getRun();
         String desc = getResources().getString(R.string.lorem);
 
         viewPager = findViewById(R.id.introViewPager);
@@ -37,6 +47,7 @@ public class Intro extends AppCompatActivity {
         btnnext = findViewById(R.id.btnNext);
         btngetstarted = findViewById(R.id.btnGetStarted);
         btnback = findViewById(R.id.btnBack);
+        btnskip = findViewById(R.id.btnSkip);
 
 
         pageItems = new ArrayList<>();
@@ -114,6 +125,21 @@ public class Intro extends AppCompatActivity {
             public void onClick(View v) {
                 //got to start activity
                 startActivity(new Intent(Intro.this, HomePage.class));
+                FirstRun firstRun = new FirstRun();
+                firstRun.setFirstRun(true);
+                firstRunInterface.insert(firstRun);
+                finish();
+            }
+        });
+
+        btnskip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //got to start activity
+                startActivity(new Intent(Intro.this, HomePage.class));
+                FirstRun firstRun = new FirstRun();
+                firstRun.setFirstRun(true);
+                firstRunInterface.insert(firstRun);
                 finish();
             }
         });
@@ -123,17 +149,20 @@ public class Intro extends AppCompatActivity {
         if(position == pageItems.size()-1){
             btngetstarted.setVisibility(View.VISIBLE);
             btnnext.setVisibility(View.GONE);
+            btnskip.setVisibility(View.GONE);
         }
 
         if(position == 0){
             btnback.setVisibility(View.GONE);
             btngetstarted.setVisibility(View.GONE);
             btnnext.setVisibility(View.VISIBLE);
+            btnskip.setVisibility(View.VISIBLE);
         }
         if(position !=pageItems.size()-1 && position !=0){
             btnback.setVisibility(View.VISIBLE);
             btngetstarted.setVisibility(View.GONE);
             btnnext.setVisibility(View.VISIBLE);
+            btnskip.setVisibility(View.VISIBLE);
         }
     }
 

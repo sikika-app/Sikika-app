@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:fontFamily="@font/isidora_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/sikika_dark"
+        android:text="this is the title this is a title this is a title this is a title this is a title"
+        android:gravity="start"
+        android:textAllCaps="true"
+        android:id="@+id/article_title" />
+
+    <ImageView
+        android:id="@+id/article_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/article_snippet"
+        android:layout_marginTop="5dp"
+        android:maxLength="384"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btn_read"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/readmore_button"
+        android:textColor="@color/sikika_blue"
+        android:text="Read more"
+        android:textAllCaps="false"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".7dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
