@@ -4,26 +4,58 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/articles"
             android:checked="true"
             android:icon="@drawable/ic_book_black_24dp"
-            android:title="@string/articles"
-            />
+            android:title="@string/menu_articles" />
+
+        <item
+            android:id="@+id/films"
+            android:icon="@drawable/ic_video_library_black"
+            android:title="@string/menu_films" />
+
+        <item
+            android:id="@+id/drama"
+            android:icon="@drawable/ic_block_black_24dp"
+            android:title="@string/menu_drama" />
+
+        <item
+            android:id="@+id/creativeArts"
+            android:icon="@drawable/ic_block_black_24dp"
+            android:title="@string/menu_creative_arts" />
+
+        <item
+            android:id="@+id/streamLive"
+            android:icon="@drawable/ic_radio_black_24dp"
+            android:title="@string/menu_stream" />
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Information">
         <menu>
+
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:id="@+id/partners"
+                android:icon="@drawable/ic_group_black_24dp"
+                android:title="@string/menu_partners" />
+
+            <item android:id="@+id/aboutUs"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="@string/menu_about_us" />
         </menu>
     </item>
+    <item android:title="Extra">
+
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:title="@string/settings"
+                android:icon="@drawable/ic_settings_black_24dp"/>
+        </menu>
+
+    </item>
+
 
 </menu>

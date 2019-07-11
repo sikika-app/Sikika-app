@@ -12,6 +12,9 @@ import android.widget.RelativeLayout;
 
 import com.jr.sikika.adapters.ViewPageAdapter;
 import com.jr.sikika.classes.ViewPageItem;
+import com.jr.sikika.database.DatabaseAccess;
+import com.jr.sikika.database.FirstRun;
+import com.jr.sikika.database.FirstRunInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +32,13 @@ public class Intro extends AppCompatActivity {
     Button btnskip;
     int position;
 
+    FirstRunInterface firstRunInterface;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        firstRunInterface = DatabaseAccess.getInstance(this).getRun();
         String desc = getResources().getString(R.string.lorem);
 
         viewPager = findViewById(R.id.introViewPager);
@@ -119,6 +125,9 @@ public class Intro extends AppCompatActivity {
             public void onClick(View v) {
                 //got to start activity
                 startActivity(new Intent(Intro.this, HomePage.class));
+                FirstRun firstRun = new FirstRun();
+                firstRun.setFirstRun(true);
+                firstRunInterface.insert(firstRun);
                 finish();
             }
         });
@@ -128,6 +137,9 @@ public class Intro extends AppCompatActivity {
             public void onClick(View v) {
                 //got to start activity
                 startActivity(new Intent(Intro.this, HomePage.class));
+                FirstRun firstRun = new FirstRun();
+                firstRun.setFirstRun(true);
+                firstRunInterface.insert(firstRun);
                 finish();
             }
         });

@@ -21,14 +21,15 @@
         android:id="@+id/article_image"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:layout_marginTop="5dp"
-        android:src="@drawable/sikika_logo"
         />
 
     <TextView
         android:id="@+id/article_snippet"
         android:layout_marginTop="5dp"
-        android:maxLength="128"
+        android:maxLength="384"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lorem"
